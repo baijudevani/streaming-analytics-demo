@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 import com.baiju.demo.actors.AnalyzerAgent;
 import com.baiju.demo.actors.RequestAgent;
 import com.baiju.demo.actors.Router;
-import com.demo.baiju.messages.Request;
+import com.baiju.demo.messages.Request;
 import com.espertech.esper.client.Configuration;
 
 import lombok.SneakyThrows;

@@ -3,7 +3,7 @@ package com.baiju.demo.actors;
 import lombok.extern.slf4j.Slf4j;
 
 import com.baiju.demo.core.Properties;
-import com.demo.baiju.messages.Request;
+import com.baiju.demo.messages.Request;
 import com.espertech.esper.client.Configuration;
 
 import akka.actor.ActorRef;

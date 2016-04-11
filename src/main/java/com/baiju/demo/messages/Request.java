@@ -1,4 +1,4 @@
-package com.demo.baiju.messages;
+package com.baiju.demo.messages;
 
 import org.joda.time.DateTime;
 

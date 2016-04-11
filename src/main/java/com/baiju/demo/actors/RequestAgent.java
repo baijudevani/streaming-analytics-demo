@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.joda.time.DateTime;
 
 import com.baiju.demo.core.Properties;
-import com.demo.baiju.messages.Request;
+import com.baiju.demo.messages.Request;
 import com.sun.xml.internal.ws.api.pipe.NextAction;
 
 import lombok.AllArgsConstructor;

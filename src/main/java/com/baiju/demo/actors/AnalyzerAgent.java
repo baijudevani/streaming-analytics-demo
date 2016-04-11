@@ -5,7 +5,7 @@ import lombok.extern.log4j.Log4j;
 import akka.actor.UntypedActor;
 
 import com.baiju.demo.core.Properties;
-import com.demo.baiju.messages.Request;
+import com.baiju.demo.messages.Request;
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPRuntime;
 import com.espertech.esper.client.EPServiceProvider;
