@@ -4,6 +4,7 @@ apply plugin: 'application'
 
 mainClassName =  "com.baiju.demo.DemoMain"
 
+
 sourceCompatibility = 1.8
 version = '1.0'
 jar {
@@ -54,4 +55,16 @@ uploadArchives {
            dirs 'repos'
        }
     }
+}
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',  
+        	'Implementation-Version': version,
+        	'Main-Class': 'com.baiju.demo.DemoMain'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }

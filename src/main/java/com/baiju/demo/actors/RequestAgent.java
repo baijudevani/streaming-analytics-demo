@@ -3,17 +3,16 @@ package com.baiju.demo.actors;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import lombok.val;
+import lombok.extern.slf4j.Slf4j;
+
 import org.joda.time.DateTime;
+
+import scala.concurrent.duration.Duration;
+import akka.actor.UntypedActor;
 
 import com.baiju.demo.core.Properties;
 import com.baiju.demo.messages.Request;
-import com.sun.xml.internal.ws.api.pipe.NextAction;
-
-import lombok.AllArgsConstructor;
-import lombok.val;
-import lombok.extern.slf4j.Slf4j;
-import scala.concurrent.duration.Duration;
-import akka.actor.UntypedActor;
 
 /**
  * A request agent that generates random requests containing an action (like,unlike) on a resource (picture)

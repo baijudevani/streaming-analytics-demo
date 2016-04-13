@@ -1,6 +1,5 @@
 package com.baiju.demo.core;
 
-import com.espertech.esper.client.EPStatement;
 
 /**
  * Application properties. 
@@ -24,8 +23,8 @@ public class Properties {
 			+ "SegmentedByUser " + "PARTITION BY " + "userId " + "FROM "
 			+ "Request";
 
-	public static final String VIEWS_BY_USERS = "SELECT userId,pictureId,count(*) as totalViews "
-			+ "FROM Request.win:time(10 sec) " + "GROUP BY userId,pictureId";
+	public static final String VIEWS_BY_USERS = "SELECT userId,count(*) as totalViews "
+			+ "FROM Request.win:time(30 sec) " + "GROUP BY userId";
 
 	public static final String USER_CLICK_PATH = "SELECT * FROM Request.win:time(30 sec) "
 			+ "MATCH_RECOGNIZE ( "

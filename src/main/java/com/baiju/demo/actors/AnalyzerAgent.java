@@ -52,9 +52,14 @@ public class AnalyzerAgent extends UntypedActor implements UpdateListener {
 		log.info("agent " + name + " registering EPL");
 		// create a per user stream
 		cep.getEPAdministrator().createEPL(Properties.CREATE_CONTEXT);
-		EPStatement statement = cep.getEPAdministrator().createEPL(
+		// Lists route to a picture3 action i.e. path analysis
+		EPStatement statementClickPath = cep.getEPAdministrator().createEPL(
 				Properties.USER_CLICK_PATH);
-		statement.addListener(this);
+		// total views by user in the last 10 seconds.
+		EPStatement statementViewsPerUser = cep.getEPAdministrator().createEPL(
+				Properties.VIEWS_BY_USERS);
+		statementClickPath.addListener(this);
+		statementViewsPerUser.addListener(this);
 	}
 
 	@Override
@@ -68,20 +73,15 @@ public class AnalyzerAgent extends UntypedActor implements UpdateListener {
 		}
 
 	}
-
+	
+	/**
+	 * Event update listener. Simply logs data for now.
+	 */
 	@Override
 	public void update(EventBean[] newEvents, EventBean[] oldEvents) {
 		for (val newEvent : newEvents) {
 			log.info(name + "-" + newEvent.getUnderlying());
 		}
-		// for (EventBean newEvent : newEvents) {
-		// //log.info(name + "-" + newEvent.getUnderlying());
-		// //val data = newEvent.getUnderlying();
-		// Request a = (Request)newEvent.get("a");
-		// Request b = (Request)newEvent.get("b");
-		//
-		// }
-
 	}
 
 }
